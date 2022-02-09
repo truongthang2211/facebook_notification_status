@@ -39,7 +39,7 @@ chrome.storage.local.get(
       OfflineSpan.classList.add("active");
     var listHistory = result.history ?? [];
     listHistory.map((e) => {
-      HistoryE.innerHTML += `<p>${e}</p>`;
+      HistoryE.innerHTML += e;
     });
   }
 );
