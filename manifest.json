@@ -1,0 +1,20 @@
+{
+  "name": "Facebook Notification Status",
+  "description": "You will get a noti when your friend online or offline",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["tts", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "js": ["main.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "public/popup.html"
+  },
+  "background": {
+    "scripts": ["playsound.js"],
+    "persistent": false
+  }
+}

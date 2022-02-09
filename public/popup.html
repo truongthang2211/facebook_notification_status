@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="texttospeech">
+      <h1>FNS</h1>
+      <div class="input-text">
+        <span>Language</span>
+        <select id="language" name="language" default-value="vi-VN">
+          <option value="Microsoft David - English (United States)">
+            Microsoft David - English (United States)
+          </option>
+          <option value="Microsoft Mark - English (United States)">
+            Microsoft Mark - English (United States)
+          </option>
+          <option value="Microsoft Zira - English (United States)">
+            Microsoft Zira - English (United States)
+          </option>
+          <option
+            value="Microsoft Adri Online (Natural) - Afrikaans (South Africa)"
+          >
+            Microsoft Adri - Afrikaans (South Africa)
+          </option>
+          <option
+            value="Microsoft Mekdes Online (Natural) - Amharic (Ethiopia)"
+          >
+            Microsoft Mekdes - Amharic (Ethiopia)
+          </option>
+          <option value="Microsoft Salma Online (Natural) - Arabic (Egypt)">
+            Microsoft Salma - Arabic (Egypt)
+          </option>
+          <option
+            value="Microsoft Zariyah Online (Natural) - Arabic (Saudi Arabia)"
+          >
+            Microsoft Zariyah - Arabic (Saudi Arabia)
+          </option>
+          <option
+            value="Microsoft Nabanita Online (Natural) - Bangla (Bangladesh)"
+          >
+            Microsoft Nabanita - Bangla (Bangladesh)
+          </option>
+          <option value="Microsoft Tanishaa Online (Natural) - Bengali (India)">
+            Microsoft Tanishaa - Bengali (India)
+          </option>
+          <option
+            value="Microsoft Kalina Online (Natural) - Bulgarian (Bulgaria)"
+          >
+            Microsoft Kalina - Bulgarian (Bulgaria)
+          </option>
+          <option value="Microsoft Nilar Online (Natural) - Burmese (Myanmar)">
+            Microsoft Nilar - Burmese (Myanmar)
+          </option>
+          <option value="Microsoft Joana Online (Natural) - Catalan (Spain)">
+            Microsoft Joana - Catalan (Spain)
+          </option>
+          <option
+            value="Microsoft HiuMaan Online (Natural) - Chinese (Hong Kong)"
+          >
+            Microsoft HiuMaan - Chinese (Hong Kong)
+          </option>
+          <option
+            value="Microsoft Xiaoxiao Online (Natural) - Chinese (Mainland)"
+          >
+            Microsoft Xiaoxiao - Chinese (Mainland)
+          </option>
+          <option
+            value="Microsoft Yunyang Online (Natural) - Chinese (Mainland)"
+          >
+            Microsoft Yunyang - Chinese (Mainland)
+          </option>
+          <option
+            value="Microsoft HsiaoChen Online (Natural) - Chinese (Taiwan)"
+          >
+            Microsoft HsiaoChen - Chinese (Taiwan)
+          </option>
+          <option
+            value="Microsoft Gabrijela Online (Natural) - Croatian (Croatia)"
+          >
+            Microsoft Gabrijela - Croatian (Croatia)
+          </option>
+          <option value="Microsoft Vlasta Online (Natural) - Czech (Czech)">
+            Microsoft Vlasta - Czech (Czech)
+          </option>
+          <option
+            value="Microsoft Christel Online (Natural) - Danish (Denmark)"
+          >
+            Microsoft Christel - Danish (Denmark)
+          </option>
+          <option value="Microsoft Dena Online (Natural) - Dutch (Belgium)">
+            Microsoft Dena - Dutch (Belgium)
+          </option>
+          <option
+            value="Microsoft Colette Online (Natural) - Dutch (Netherlands)"
+          >
+            Microsoft Colette - Dutch (Netherlands)
+          </option>
+          <option
+            value="Microsoft Natasha Online (Natural) - English (Australia)"
+          >
+            Microsoft Natasha - English (Australia)
+          </option>
+          <option value="Microsoft Clara Online (Natural) - English (Canada)">
+            Microsoft Clara - English (Canada)
+          </option>
+          <option value="Microsoft Neerja Online (Natural) - English (India)">
+            Microsoft Neerja - English (India)
+          </option>
+          <option value="Microsoft Emily Online (Natural) - English (Ireland)">
+            Microsoft Emily - English (Ireland)
+          </option>
+          <option
+            value="Microsoft Rosa Online (Natural) - English (Philippines)"
+          >
+            Microsoft Rosa - English (Philippines)
+          </option>
+          <option
+            value="Microsoft Leah Online (Natural) - English (South Africa)"
+          >
+            Microsoft Leah - English (South Africa)
+          </option>
+          <option
+            value="Microsoft Sonia Online (Natural) - English (United Kingdom)"
+          >
+            Microsoft Sonia - English (United Kingdom)
+          </option>
+          <option
+            value="Microsoft Aria Online (Natural) - English (United States)"
+          >
+            Microsoft Aria - English (United States)
+          </option>
+          <option
+            value="Microsoft Guy Online (Natural) - English (United States)"
+          >
+            Microsoft Guy - English (United States)
+          </option>
+          <option
+            value="Microsoft Jenny Online (Natural) - English (United States)"
+          >
+            Microsoft Jenny - English (United States)
+          </option>
+          <option value="Microsoft Anu Online (Natural) - Estonian (Estonia)">
+            Microsoft Anu - Estonian (Estonia)
+          </option>
+          <option
+            value="Microsoft Blessica Online (Natural) - Filipino (Philippines)"
+          >
+            Microsoft Blessica - Filipino (Philippines)
+          </option>
+          <option value="Microsoft Noora Online (Natural) - Finnish (Finland)">
+            Microsoft Noora - Finnish (Finland)
+          </option>
+          <option
+            value="Microsoft Charline Online (Natural) - French (Belgium)"
+          >
+            Microsoft Charline - French (Belgium)
+          </option>
+          <option value="Microsoft Sylvie Online (Natural) - French (Canada)">
+            Microsoft Sylvie - French (Canada)
+          </option>
+          <option value="Microsoft Denise Online (Natural) - French (France)">
+            Microsoft Denise - French (France)
+          </option>
+          <option
+            value="Microsoft Ariane Online (Natural) - French (Switzerland)"
+          >
+            Microsoft Ariane - French (Switzerland)
+          </option>
+          <option value="Microsoft Sabela Online (Natural) - Galician (Spain)">
+            Microsoft Sabela - Galician (Spain)
+          </option>
+          <option value="Microsoft Ingrid Online (Natural) - German (Austria)">
+            Microsoft Ingrid - German (Austria)
+          </option>
+          <option value="Microsoft Katja Online (Natural) - German (Germany)">
+            Microsoft Katja - German (Germany)
+          </option>
+          <option
+            value="Microsoft Leni Online (Natural) - German (Switzerland)"
+          >
+            Microsoft Leni - German (Switzerland)
+          </option>
+          <option value="Microsoft Athina Online (Natural) - Greek (Greece)">
+            Microsoft Athina - Greek (Greece)
+          </option>
+          <option value="Microsoft Dhwani Online (Natural) - Gujarati (India)">
+            Microsoft Dhwani - Gujarati (India)
+          </option>
+          <option value="Microsoft Hila Online (Natural) - Hebrew (Israel)">
+            Microsoft Hila - Hebrew (Israel)
+          </option>
+          <option value="Microsoft Swara Online (Natural) - Hindi (India)">
+            Microsoft Swara - Hindi (India)
+          </option>
+          <option
+            value="Microsoft Noemi Online (Natural) - Hungarian (Hungary)"
+          >
+            Microsoft Noemi - Hungarian (Hungary)
+          </option>
+          <option
+            value="Microsoft Gudrun Online (Natural) - Icelandic (Iceland)"
+          >
+            Microsoft Gudrun - Icelandic (Iceland)
+          </option>
+          <option
+            value="Microsoft Gadis Online (Natural) - Indonesian (Indonesia)"
+          >
+            Microsoft Gadis - Indonesian (Indonesia)
+          </option>
+          <option value="Microsoft Orla Online (Natural) - Irish(Ireland)">
+            Microsoft Orla - Irish(Ireland)
+          </option>
+          <option value="Microsoft Elsa Online (Natural) - Italian (Italy)">
+            Microsoft Elsa - Italian (Italy)
+          </option>
+          <option value="Microsoft Nanami Online (Natural) - Japanese (Japan)">
+            Microsoft Nanami - Japanese (Japan)
+          </option>
+          <option
+            value="Microsoft Siti Online (Natural) - Javanese (Indonesia)"
+          >
+            Microsoft Siti - Javanese (Indonesia)
+          </option>
+          <option value="Microsoft Sapna Online (Natural) - Kannada (India)">
+            Microsoft Sapna - Kannada (India)
+          </option>
+          <option
+            value="Microsoft Aigul Online (Natural) - Kazakh (Kazakhstan)"
+          >
+            Microsoft Aigul - Kazakh (Kazakhstan)
+          </option>
+          <option value="Microsoft Sreymom Online (Natural) - Khmer (Cambodia)">
+            Microsoft Sreymom - Khmer (Cambodia)
+          </option>
+          <option value="Microsoft SunHi Online (Natural) - Korean (Korea)">
+            Microsoft SunHi - Korean (Korea)
+          </option>
+          <option value="Microsoft Keomany Online (Natural) - Lao (Laos)">
+            Microsoft Keomany - Lao (Laos)
+          </option>
+          <option value="Microsoft Everita Online (Natural) - Latvian (Latvia)">
+            Microsoft Everita - Latvian (Latvia)
+          </option>
+          <option
+            value="Microsoft Ona Online (Natural) - Lithuanian (Lithuania)"
+          >
+            Microsoft Ona - Lithuanian (Lithuania)
+          </option>
+          <option
+            value="Microsoft Marija Online (Natural) - Macedonian (Republic of North Macedonia)"
+          >
+            Microsoft Marija - Macedonian (Republic of North Macedonia)
+          </option>
+          <option value="Microsoft Yasmin Online (Natural) - Malay (Malaysia)">
+            Microsoft Yasmin - Malay (Malaysia)
+          </option>
+          <option
+            value="Microsoft Sobhana Online (Natural) - Malayalam (India)"
+          >
+            Microsoft Sobhana - Malayalam (India)
+          </option>
+          <option value="Microsoft Grace Online (Natural) - Maltese (Malta)">
+            Microsoft Grace - Maltese (Malta)
+          </option>
+          <option value="Microsoft Aarohi Online (Natural) - Marathi (India)">
+            Microsoft Aarohi - Marathi (India)
+          </option>
+          <option
+            value="Microsoft Pernille Online (Natural) - Norwegian (Bokmål, Norway)"
+          >
+            Microsoft Pernille - Norwegian (Bokmål, Norway)
+          </option>
+          <option
+            value="Microsoft Latifa Online (Natural) - Pashto (Afghanistan)"
+          >
+            Microsoft Latifa - Pashto (Afghanistan)
+          </option>
+          <option value="Microsoft Dilara Online (Natural) - Persian (Iran)">
+            Microsoft Dilara - Persian (Iran)
+          </option>
+          <option value="Microsoft Zofia Online (Natural) - Polish (Poland)">
+            Microsoft Zofia - Polish (Poland)
+          </option>
+          <option
+            value="Microsoft Francisca Online (Natural) - Portuguese (Brazil)"
+          >
+            Microsoft Francisca - Portuguese (Brazil)
+          </option>
+          <option
+            value="Microsoft Raquel Online (Natural) - Portuguese (Portugal)"
+          >
+            Microsoft Raquel - Portuguese (Portugal)
+          </option>
+          <option value="Microsoft Alina Online (Natural) - Romanian (Romania)">
+            Microsoft Alina - Romanian (Romania)
+          </option>
+          <option
+            value="Microsoft Svetlana Online (Natural) - Russian (Russia)"
+          >
+            Microsoft Svetlana - Russian (Russia)
+          </option>
+          <option value="Microsoft Sophie Online (Natural) - Serbian (Serbia)">
+            Microsoft Sophie - Serbian (Serbia)
+          </option>
+          <option
+            value="Microsoft Thilini Online (Natural) - Sinhala (Sri Lanka)"
+          >
+            Microsoft Thilini - Sinhala (Sri Lanka)
+          </option>
+          <option
+            value="Microsoft Viktoria Online (Natural) - Slovak (Slovakia)"
+          >
+            Microsoft Viktoria - Slovak (Slovakia)
+          </option>
+          <option
+            value="Microsoft Petra Online (Natural) - Slovenian (Slovenia)"
+          >
+            Microsoft Petra - Slovenian (Slovenia)
+          </option>
+          <option value="Microsoft Ubax Online (Natural) - Somali (Somalia)">
+            Microsoft Ubax - Somali (Somalia)
+          </option>
+          <option
+            value="Microsoft Elena Online (Natural) - Spanish (Argentina)"
+          >
+            Microsoft Elena - Spanish (Argentina)
+          </option>
+          <option
+            value="Microsoft Salome Online (Natural) - Spanish (Colombia)"
+          >
+            Microsoft Salome - Spanish (Colombia)
+          </option>
+          <option value="Microsoft Dalia Online (Natural) - Spanish (Mexico)">
+            Microsoft Dalia - Spanish (Mexico)
+          </option>
+          <option value="Microsoft Elvira Online (Natural) - Spanish (Spain)">
+            Microsoft Elvira - Spanish (Spain)
+          </option>
+          <option
+            value="Microsoft Tuti Online (Natural) - Sundanese (Indonesia)"
+          >
+            Microsoft Tuti - Sundanese (Indonesia)
+          </option>
+          <option value="Microsoft Zuri Online (Natural) - Swahili (Kenya)">
+            Microsoft Zuri - Swahili (Kenya)
+          </option>
+          <option value="Microsoft Sofie Online (Natural) - Swedish (Sweden)">
+            Microsoft Sofie - Swedish (Sweden)
+          </option>
+          <option value="Microsoft Pallavi Online (Natural) - Tamil (India)">
+            Microsoft Pallavi - Tamil (India)
+          </option>
+          <option value="Microsoft Shruti Online (Natural) - Telugu (India)">
+            Microsoft Shruti - Telugu (India)
+          </option>
+          <option
+            value="Microsoft Premwadee Online (Natural) - Thai (Thailand)"
+          >
+            Microsoft Premwadee - Thai (Thailand)
+          </option>
+          <option value="Microsoft Emel Online (Natural) - Turkish (Turkey)">
+            Microsoft Emel - Turkish (Turkey)
+          </option>
+          <option
+            value="Microsoft Polina Online (Natural) - Ukrainian (Ukraine)"
+          >
+            Microsoft Polina - Ukrainian (Ukraine)
+          </option>
+          <option value="Microsoft Uzma Online (Natural) - Urdu (Pakistan)">
+            Microsoft Uzma - Urdu (Pakistan)
+          </option>
+          <option
+            value="Microsoft Madina Online (Natural) - Uzbek (Uzbekistan)"
+          >
+            Microsoft Madina - Uzbek (Uzbekistan)
+          </option>
+          <option
+            selected
+            value="Microsoft HoaiMy Online (Natural) - Vietnamese (Vietnam)"
+          >
+            Microsoft HoaiMy - Vietnamese (Vietnam)
+          </option>
+          <option
+            value="Microsoft Nia Online (Natural) - Welsh (United Kingdom)"
+          >
+            Microsoft Nia - Welsh (United Kingdom)
+          </option>
+          <option
+            value="Microsoft Thando Online (Natural) - Zulu (South Africa)"
+          >
+            Microsoft Thando - Zulu (South Africa)
+          </option>
+        </select>
+      </div>
+      <div class="input-text">
+        <span id="online-span">Online</span>
+        <input type="text" name="onlinetext" id="onlinetext" />
+      </div>
+      <div class="input-text">
+        <span id="offline-span">Offline</span>
+        <input type="text" name="offlinetext" id="offlinetext" />
+      </div>
+      <div class="input-text">
+        <span>Speed</span>
+        <input
+          name="speed"
+          type="range"
+          id="speed-control"
+          class="styled-slider slider-progress"
+        />
+        <span id="speed-text"></span>
+      </div>
+    </div>
+    <div class="history">
+      <h5>History</h5>
+      <i class="fas fa-trash" id="history-delete"></i>
+      <div class="history-list" id="history"></div>
+    </div>
+    <div class="footer">
+      <p>
+        <span>*Online,Offilne: </span>{name} will be replaced by user's name
+      </p>
+      <p>
+        Made by
+        <a target="_blank" href="http://facebook.com/truongthang2211"
+          >Nguyễn Thắng</a
+        >
+        with love
+      </p>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
