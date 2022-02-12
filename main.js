@@ -45,11 +45,11 @@ function handleStatusChange(TargetName, online) {
       );
       const logger = `${new Date().toLocaleString("vi")} ${speechText}`;
       console.log(logger);
-      listHistory.push(
-        `<p><b>[${new Date().toLocaleString("vi")}]</b> ${
-          online ? OnlineText : OfflineText
-        }</p>`.replace("{name}", `<b style="color:#baedac">${TargetName}</b>`)
-      );
+      listHistory.push({
+        time: new Date().toLocaleString("vi"),
+        text: `${online ? OnlineText : OfflineText}`,
+        targetName: TargetName,
+      });
 
       if (!loading) AddHistory(listHistory);
       if (result["online-speech"] === false && online) return;

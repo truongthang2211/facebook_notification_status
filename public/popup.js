@@ -8,6 +8,8 @@ const HistoryDelete = document.querySelector("#history-delete");
 const Language = document.querySelector("#language");
 const OnlineSpan = document.querySelector("#online-span");
 const OfflineSpan = document.querySelector("#offline-span");
+const Search = document.querySelector("#search");
+var listHistory = [];
 
 OnlineSpan.onclick = handleToggle;
 OfflineSpan.onclick = handleToggle;
@@ -37,9 +39,12 @@ chrome.storage.local.get(
       OnlineSpan.classList.add("active");
     if (result["offline-speech"] === undefined || result["offline-speech"])
       OfflineSpan.classList.add("active");
-    var listHistory = result.history ?? [];
+    listHistory = result.history ?? [];
     listHistory.map((e) => {
-      HistoryE.innerHTML += e;
+      HistoryE.innerHTML += `<p><b>[${e.time}]</b> ${e.text}</p>`.replace(
+        "{name}",
+        `<b style="color:#baedac">${e.targetName}</b>`
+      );
     });
   }
 );
@@ -91,3 +96,21 @@ function handleToggle(e) {
     }
   );
 }
+//search
+Search.oninput = (e) => {
+  const newList = listHistory.filter((i) => {
+    const rootText = `[${i.time}] ${i.text}`
+      .replace("{name}", i.targetName)
+      .toLowerCase();
+    console.log(rootText);
+    return rootText.includes(e.target.value.toLowerCase());
+  });
+  console.log(newList);
+  HistoryE.innerHTML = "";
+  newList.map((e) => {
+    HistoryE.innerHTML += `<p><b>[${e.time}]</b> ${e.text}</p>`.replace(
+      "{name}",
+      `<b style="color:#baedac">${e.targetName}</b>`
+    );
+  });
+};
