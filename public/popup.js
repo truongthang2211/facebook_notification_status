@@ -68,6 +68,7 @@ RangeBar.oninput = (e) => {
   SpeedText.innerHTML = (e.target.value * 3) / 100;
 };
 HistoryDelete.onclick = (e) => {
+  listHistory = [];
   chrome.storage.local.set(
     {
       history: [],
