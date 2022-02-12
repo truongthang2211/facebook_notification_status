@@ -104,7 +104,10 @@ Search.oninput = (e) => {
       .replace("{name}", i.targetName)
       .toLowerCase();
     console.log(rootText);
-    return rootText.includes(e.target.value.toLowerCase());
+    return e.target.value
+      .toLowerCase()
+      .split(" ")
+      .every((a) => rootText.includes(a));
   });
   console.log(newList);
   HistoryE.innerHTML = "";

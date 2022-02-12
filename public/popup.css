@@ -121,13 +121,16 @@ input[type="range"] {
 .search-history {
   display: inline-block;
   margin-left: 8px;
-  border-bottom: 1px solid #868585;
+  border: 1px solid #868585;
+  border-radius: 15px;
+  padding: 0px 12px;
 }
 .search-history input {
   background-color: transparent;
   border: none;
-  padding: 0 0 0 8px;
+  padding: 3px;
+  width: 212px;
 }
 .search-history:focus-within {
-  border-bottom: 1px solid #ff3f80;
+  border: 1px solid #ff3f80;
 }
