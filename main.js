@@ -1,26 +1,47 @@
 var listHistory = [];
 var loading = false;
-document.body.addEventListener("DOMNodeInserted", (e) => {
+const root = document.querySelector(
+  "body > div >div > div:nth-child(1) > .rq0escxv  > [data-visualcompletion='ignore']"
+);
+root.addEventListener("DOMNodeInserted", (e) => {
   if (
     e.target.className ==
     "pmk7jnqg j83agx80 bp9cbjyn taijpn5t tmrshh9y m7zwrmfr oud54xpy"
   ) {
-    const TargetName = e.target
+    AddEvenforTarget(e.target);
+  } else if (e.target.className == "poy2od1o i09qtzwb n7fi1qx3") {
+    const TargetsElement = e.target.querySelectorAll(
+      ".pmk7jnqg.j83agx80.bp9cbjyn.taijpn5t.tmrshh9y.m7zwrmfr.oud54xpy"
+    );
+    TargetsElement.forEach((element) => {
+      AddEvenforTarget(element);
+    });
+  }
+});
+function AddEvenforTarget(element) {
+  if (element) {
+    const TargetName = element
       .querySelector("div:nth-child(1)")
       .getAttribute("aria-label")
       .replace("Mở đoạn chat với ", "")
       .replace("Open chat with ", "");
-    const isOnline = e.target.querySelector(".pmk7jnqg:not(.aew9gpjp)");
-    console.log(isOnline);
+    console.log("add detected");
 
-    isOnline.addEventListener("DOMNodeInserted", () => {
-      handleStatusChange(TargetName, true);
-    });
-    isOnline.addEventListener("DOMNodeRemoved", () => {
-      handleStatusChange(TargetName, false);
-    });
+    const isOnline = element.querySelector(
+      ".pmk7jnqg:not(.aew9gpjp):not(.s45kfl79)"
+    );
+    if (isOnline) {
+      console.log(isOnline);
+
+      isOnline.addEventListener("DOMNodeInserted", () => {
+        handleStatusChange(TargetName, true);
+      });
+      isOnline.addEventListener("DOMNodeRemoved", () => {
+        handleStatusChange(TargetName, false);
+      });
+    }
   }
-});
+}
 function handleStatusChange(TargetName, online) {
   var OnlineText, OfflineText, Speed, Lang;
   chrome.storage.local.get(
@@ -80,8 +101,10 @@ document.body.addEventListener("DOMNodeRemoved", (e) => {
     e.target.className ==
     "pmk7jnqg j83agx80 bp9cbjyn taijpn5t tmrshh9y m7zwrmfr oud54xpy"
   ) {
-    e.target.removeEventListener("DOMNodeInserted", () => {});
-    e.target.removeEventListener("DOMNodeRemoved", () => {});
+    console.log("remove detected");
+    const isOnline = e.target.querySelector(".pmk7jnqg:not(.aew9gpjp)");
+    isOnline.removeEventListener("DOMNodeInserted", () => {});
+    isOnline.removeEventListener("DOMNodeRemoved", () => {});
   }
 });
 function sleep(ms) {
