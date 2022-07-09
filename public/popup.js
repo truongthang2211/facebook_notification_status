@@ -6,8 +6,8 @@ const Submit = document.querySelector("#submit");
 const HistoryE = document.querySelector("#history");
 const HistoryDelete = document.querySelector("#history-delete");
 const Language = document.querySelector("#language");
-const OnlineSpan = document.querySelector("#online-span");
-const OfflineSpan = document.querySelector("#offline-span");
+const OnlineIcon = document.querySelector("#online-icon");
+const OfflineIcon = document.querySelector("#offline-icon");
 const Search = document.querySelector("#search");
 var listHistory = [];
 // Get availabel voices
@@ -29,8 +29,8 @@ speechSynthesis.onvoiceschanged = function () {
 // Get saved settings
 GetLocalSetting();
 // Set function
-OnlineSpan.onclick = handleToggle;
-OfflineSpan.onclick = handleToggle;
+OnlineIcon.onclick = handleToggle;
+OfflineIcon.onclick = handleToggle;
 OnlineText.onchange = handleonChange;
 OfflineText.onchange = handleonChange;
 RangeBar.onchange = handleonChange;
@@ -66,9 +66,9 @@ HistoryDelete.onclick = (e) => {
 };
 function handleToggle(e) {
   console.log(e.target.innerHTML);
-  const status = e.target.classList.toggle("active");
+  const status = !e.target.classList.toggle("fa-volume-xmark");
   var key = "offline-speech";
-  if (e.target.innerHTML === "Online") {
+  if (e.target.id === "online-icon") {
     key = "online-speech";
   }
   chrome.storage.local.set(
@@ -121,10 +121,10 @@ function GetLocalSetting() {
         result.language ?? "Microsoft David - English (United States)";
       RangeBar.value = result.speed ?? 25;
       SpeedText.innerHTML = (RangeBar.value * 3) / 100;
-      if (result["online-speech"] === undefined || result["online-speech"])
-        OnlineSpan.classList.add("active");
-      if (result["offline-speech"] === undefined || result["offline-speech"])
-        OfflineSpan.classList.add("active");
+      if (result["online-speech"] === false)
+        OnlineIcon.classList.add("fa-volume-xmark");
+      if (result["offline-speech"] === false)
+        OfflineIcon.classList.add("fa-volume-xmark");
       listHistory = result.history ?? [];
       listHistory.map((e) => {
         HistoryE.innerHTML += `<p><b>[${e.time}]</b> ${e.text}</p>`.replace(
