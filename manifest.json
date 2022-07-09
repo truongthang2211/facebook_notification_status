@@ -16,5 +16,11 @@
 
   "background": {
     "service_worker": "playsound.js"
+  },
+  "icons": {
+    "16": "icon/fns16.png",
+    "32": "icon/fns32.png",
+    "48": "icon/fns48.png",
+    "128": "icon/fns128.png"
   }
 }

@@ -54,7 +54,7 @@ body {
   padding: 4px 8px;
   border-radius: 5px;
 }
-.input-text input[type="text"] {
+input[type="text"] {
   background-color: transparent;
   outline: none;
   border: none;
@@ -78,30 +78,37 @@ body {
 }
 .history h5 {
   display: inline-block;
-  padding-right: 12px;
+  margin: 0;
 }
 
 .history i,
-.footer p:first-of-type,
-.footer a {
+.footer p:first-of-type {
   color: #ff3f80;
+}
+.history-search-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer a {
+  color: #ffac3f;
 }
 .history .fa-trash:hover {
   opacity: 0.7;
   cursor: pointer;
 }
 .history p {
-  padding: 4px 2px;
+  padding: 4px;
   margin: 4px 0;
-  /* border: 1px solid #ff3f80; */
   background-color: #424242;
   transition: all 0.2s ease;
 }
+.history p:first-child {
+  margin-top: 0;
+}
 .history p:hover {
-  /* border: 1px solid #ff3f80; */
   transform: translateY(-2px);
   background-color: #4d4d4d;
-  color: #fff;
 }
 .history-list {
   max-height: 300px;
@@ -109,6 +116,7 @@ body {
   padding-right: 8px;
   padding-left: 4px;
   scroll-behavior: smooth;
+  margin-top: 8px;
 }
 #history::-webkit-scrollbar {
   width: 6px;
@@ -124,9 +132,11 @@ body {
   font-size: 12px;
   margin: 0;
 }
+.history-text-box i {
+  margin-left: 4px;
+}
 .search-history {
   display: inline-block;
-  margin-left: 8px;
   border: 1px solid #868585;
   border-radius: 15px;
   padding: 0px 12px;

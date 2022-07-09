@@ -4,7 +4,7 @@ const locale = "en-US";
 const root = document.querySelector(
   "body > div >div > div:nth-child(1) > .rq0escxv  > [data-visualcompletion='ignore']"
 );
-root.addEventListener("DOMNodeInserted", (e) => {
+root?.addEventListener("DOMNodeInserted", (e) => {
   if (
     e.target.className ==
     "pmk7jnqg j83agx80 bp9cbjyn taijpn5t tmrshh9y m7zwrmfr oud54xpy"
@@ -104,7 +104,8 @@ function GetTargetName(string) {
   string = string.replaceAt(0, string[0].toLowerCase());
   const arrWord = string.split(" ");
   for (let word of arrWord) {
-    if (word[0] === word[0].toLowerCase()) string = string.replace(word, "");
+    if (word[0] === word[0].toUpperCase()) break;
+    string = string.replace(word, "");
   }
   return string.trim();
 }
@@ -115,7 +116,7 @@ document.body.addEventListener("DOMNodeRemoved", (e) => {
   ) {
     console.log("remove detected");
     const isOnline = e.target.querySelector(".pmk7jnqg:not(.aew9gpjp)");
-    isOnline.removeEventListener("DOMNodeInserted", () => {});
-    isOnline.removeEventListener("DOMNodeRemoved", () => {});
+    isOnline?.removeEventListener("DOMNodeInserted", () => {});
+    isOnline?.removeEventListener("DOMNodeRemoved", () => {});
   }
 });
