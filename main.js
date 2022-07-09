@@ -54,11 +54,9 @@ function handleStatusChange(TargetName, online) {
       "language",
     ],
     function (result) {
-      OnlineText = result.onlinetext ?? "{name} đang online";
-      OfflineText = result.offlinetext ?? "{name} đã offline";
-      Lang =
-        result.language ??
-        "Microsoft HoaiMy Online (Natural) - Vietnamese (Vietnam)";
+      OnlineText = result.onlinetext ?? "{name} is now online";
+      OfflineText = result.offlinetext ?? "{name} is offline";
+      Lang = result.language ?? "Microsoft David - English (United States)";
       Speed = result.speed ?? 25;
       const speechText = `${online ? OnlineText : OfflineText}`.replace(
         "{name}",

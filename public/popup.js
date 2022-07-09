@@ -10,46 +10,31 @@ const OnlineSpan = document.querySelector("#online-span");
 const OfflineSpan = document.querySelector("#offline-span");
 const Search = document.querySelector("#search");
 var listHistory = [];
+// Get availabel voices
 
+speechSynthesis.onvoiceschanged = function () {
+  const voices = speechSynthesis.getVoices();
+  console.log(voices);
+
+  if (Array.isArray(voices)) {
+    for (voice of voices) {
+      const opt = document.createElement("option");
+      opt.value = voice.name;
+      opt.innerHTML = voice.name;
+      Language.appendChild(opt);
+    }
+  }
+};
+
+// Get saved settings
+GetLocalSetting();
+// Set function
 OnlineSpan.onclick = handleToggle;
 OfflineSpan.onclick = handleToggle;
 OnlineText.onchange = handleonChange;
 OfflineText.onchange = handleonChange;
 RangeBar.onchange = handleonChange;
 Language.onchange = handleonChange;
-chrome.storage.local.get(
-  [
-    "onlinetext",
-    "offlinetext",
-    "speed",
-    "history",
-    "online-speech",
-    "offline-speech",
-    "language",
-  ],
-  function (result) {
-    OnlineText.value = result.onlinetext ?? "{name} đang online";
-    OfflineText.value = result.offlinetext ?? "{name} đã offline";
-    Language.value =
-      result.language ??
-      "Microsoft HoaiMy Online (Natural) - Vietnamese (Vietnam)";
-    RangeBar.value = result.speed ?? 25;
-    SpeedText.innerHTML = (RangeBar.value * 3) / 100;
-    if (result["online-speech"] === undefined || result["online-speech"])
-      OnlineSpan.classList.add("active");
-    if (result["offline-speech"] === undefined || result["offline-speech"])
-      OfflineSpan.classList.add("active");
-    listHistory = result.history ?? [];
-    listHistory.map((e) => {
-      HistoryE.innerHTML += `<p><b>[${e.time}]</b> ${e.text}</p>`.replace(
-        "{name}",
-        `<b style="color:#baedac">${e.targetName}</b>`
-      );
-    });
-  }
-);
-
-// Submit.onclick = function () {
 
 function handleonChange(e) {
   chrome.storage.local.set(
@@ -118,3 +103,35 @@ Search.oninput = (e) => {
     );
   });
 };
+function GetLocalSetting() {
+  chrome.storage.local.get(
+    [
+      "onlinetext",
+      "offlinetext",
+      "speed",
+      "history",
+      "online-speech",
+      "offline-speech",
+      "language",
+    ],
+    function (result) {
+      OnlineText.value = result.onlinetext ?? "{name} is now online";
+      OfflineText.value = result.offlinetext ?? "{name} is offline";
+      Language.value =
+        result.language ?? "Microsoft David - English (United States)";
+      RangeBar.value = result.speed ?? 25;
+      SpeedText.innerHTML = (RangeBar.value * 3) / 100;
+      if (result["online-speech"] === undefined || result["online-speech"])
+        OnlineSpan.classList.add("active");
+      if (result["offline-speech"] === undefined || result["offline-speech"])
+        OfflineSpan.classList.add("active");
+      listHistory = result.history ?? [];
+      listHistory.map((e) => {
+        HistoryE.innerHTML += `<p><b>[${e.time}]</b> ${e.text}</p>`.replace(
+          "{name}",
+          `<b style="color:#baedac">${e.targetName}</b>`
+        );
+      });
+    }
+  );
+}

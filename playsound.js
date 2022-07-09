@@ -24,4 +24,3 @@ function PlaySound(listText, speed, language) {
     });
   }
 }
-// chrome.storage.local.clear();
