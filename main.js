@@ -1,5 +1,6 @@
 var listHistory = [];
 var loading = false;
+const locale = "en-US";
 const root = document.querySelector(
   "body > div >div > div:nth-child(1) > .rq0escxv  > [data-visualcompletion='ignore']"
 );
@@ -62,10 +63,10 @@ function handleStatusChange(TargetName, online) {
         "{name}",
         TargetName
       );
-      const logger = `${new Date().toLocaleString("vi")} ${speechText}`;
+      const logger = `${new Date().toLocaleString(locale)} ${speechText}`;
       console.log(logger);
       listHistory.push({
-        time: new Date().toLocaleString("vi"),
+        time: new Date().toLocaleString(locale),
         text: `${online ? OnlineText : OfflineText}`,
         targetName: TargetName,
       });
@@ -105,8 +106,3 @@ document.body.addEventListener("DOMNodeRemoved", (e) => {
     isOnline.removeEventListener("DOMNodeRemoved", () => {});
   }
 });
-function sleep(ms) {
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, ms);
-  });
-}
