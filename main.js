@@ -21,11 +21,9 @@ root.addEventListener("DOMNodeInserted", (e) => {
 });
 function AddEvenforTarget(element) {
   if (element) {
-    const TargetName = element
-      .querySelector("div:nth-child(1)")
-      .getAttribute("aria-label")
-      .replace("Mở đoạn chat với ", "")
-      .replace("Open chat with ", "");
+    const TargetName = GetTargetName(
+      element.querySelector("div:nth-child(1)").getAttribute("aria-label")
+    );
     console.log("add detected");
 
     const isOnline = element.querySelector(
@@ -94,6 +92,21 @@ function AddHistory(listHistoryG) {
       });
     });
   }
+}
+String.prototype.replaceAt = function (index, replacement) {
+  return (
+    this.substring(0, index) +
+    replacement +
+    this.substring(index + replacement.length)
+  );
+};
+function GetTargetName(string) {
+  string = string.replaceAt(0, string[0].toLowerCase());
+  const arrWord = string.split(" ");
+  for (let word of arrWord) {
+    if (word[0] === word[0].toLowerCase()) string = string.replace(word, "");
+  }
+  return string.trim();
 }
 document.body.addEventListener("DOMNodeRemoved", (e) => {
   if (
