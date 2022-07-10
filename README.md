@@ -23,6 +23,7 @@ Download and extract this project
 ![Download project](https://res.cloudinary.com/dyjtdqqyd/image/upload/v1657443155/facebook_notification_status/Screenshot_2022-07-10_142835_y5hu9u.png)
 
 </div>
+
 From your browser -> go to **Extensions** page -> Enable **Developer mode** -> **Load unpacked** -> Select the folder extracted from .zip file
 
 ## User detection <a name = "user_detection"></a>
