@@ -2,10 +2,9 @@
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/truongthang2211/facebook_notification_status/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/truongthang2211/facebook_notification_status/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![Star](https://badgen.net/github/stars/truongthang2211/facebook_notification_status?color=yellow)]()
+[![GitHub Issues](https://badgen.net/github/issues/truongthang2211/facebook_notification_status?color=green)](https://github.com/truongthang2211/facebook_notification_status/issues)
+[![License](https://badgen.net/github/license/truongthang2211/facebook_notification_status)](/LICENSE)
 
 </div>
 
