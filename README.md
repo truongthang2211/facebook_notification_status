@@ -36,6 +36,13 @@ The extension can't detect users who grouped like the image below
 
 ![User detection 2](https://res.cloudinary.com/dyjtdqqyd/image/upload/v1657444060/facebook_notification_status/Screenshot_2022-07-10_151837_fk2y8s.png)
 
+### Note
+
+- The first letter of the user's name or users's nickname must be upper case or is a number
+  - These will work: `Alexander Alex` `Alexander alex` `1000 years love you`
+  - This won't work: `alexander alex`
+- Work good with Latin letters, others I don't know
+
 ## Features
 
 <div align="center">
@@ -74,5 +81,5 @@ The speed of speech
 
 ## Donate
 
-- [Buy me a coffe](paypal.me/truongthang2211)
-- [Paypal](paypal.me/truongthang2211)
+- [Buy me a coffe](https://www.buymeacoffee.com/truongthang2211)
+- [Paypal](https://www.paypal.com/paypalme/truongthang2211)
