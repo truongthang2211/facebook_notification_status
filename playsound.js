@@ -30,8 +30,8 @@ function PlaySound(listText, speed, language) {
   const voices = await chrome.tts.getVoices();
   console.log("Voice in playsound.js: ");
   console.log(voices);
-  if (isEdgeChromium && voices.length < 27) {
-    PlaySound([""], 25, voices[5].voiceName);
+  if (isEdgeChromium && voices && voices.length < 27) {
+    PlaySound([""], 25, voices[4].voiceName);
     console.log("Updated voices");
     chrome.runtime.reload();
   }
