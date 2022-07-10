@@ -10,7 +10,7 @@
 
 ---
 
-<p align="center"> This extension will nofify you when your friends is online or offline in Facebook.
+<p align="center"> This extension will notify you when your friends are online or offline in Facebook.
     <br> 
 </p>
 
